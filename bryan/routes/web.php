@@ -12,5 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('sonobello');
+    return view('welcome');
 });
+//se richiesto la pagina sonobello esegue la funzione
+
+/*Route::get('/first_example/{post}',function($post){
+	$posts=[
+	"First_post" => "Bruno distrugge tutto cazzo",
+	"Second_post" => "Antonio grasso ea nu pipolo"
+	];
+	return view('sonobello',["post"=>$posts[$post] ?? "nothing here"]);
+}); */
+
+Route::get('first_example/{slug}','PostController@get_post');
+Route::get('ciao',function(){ echo phpinfo();});
