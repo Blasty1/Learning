@@ -4,9 +4,9 @@
 	</head>
 	<body>
 		<h1>
-			Bryan's site
+			Post number : {{$codice->ID}}
 		</h1>
-		<p>{{$post}}</p>
+		<p>{{$codice->body}}</p>
 	</body>
 	
 	

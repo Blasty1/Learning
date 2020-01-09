@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\posts;
 
 class PostController extends Controller
 {
     public function get_post($slug){
-		$posts=\DB::table('posts')->where('slug',$slug)->first();
-		return dd($posts);
+    	//otteniamo i valori dal db , otteniamo ilprimo valore o l'errore 404
+		$post=posts::where('slurp',$slug)->firstorFail();
 		
-		//return view('sonobello',["post"=>$posts[$slug] ?? "nothing here"]);
+		#ritorniamo la pagina html e la variabile $codice che possiede il risultato richiesto
+		return view('sonobello',['codice' => $post]);
+
 	}
 }
