@@ -18,4 +18,7 @@ Route::get('/', function () {
 
 #non appena viene chiamata first_example con un valore si richiama la funzione get_post
 Route::get('first_example/{slug}','PostController@get_post');
-Route::get('Second_example',"AssignController@test");
+Route::get('/about',"AssignController@test");
+
+Route::get('/about/{articles}',"ArticlesController@show");
+Route::get('/articles',"ArticlesController@all_arti");
