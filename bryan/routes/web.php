@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//PUT , GET, POST, DELETE
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,4 +22,10 @@ Route::get('first_example/{slug}','PostController@get_post');
 Route::get('/about',"AssignController@test");
 
 Route::get('/about/{articles}',"ArticlesController@show");
-Route::get('/articles',"ArticlesController@all_arti");
+Route::get('/articles',"ArticlesController@index");
+Route::post('articles',"ArticlesController@store");
+Route::get('/articles/create',"ArticlesController@create");
+Route::get('/articles/{articles}',"ArticlesController@show");
+Route::get('/articles/{articles}/edit',"ArticlesController@edit");
+Route::put('articles/{articles}',"ArticlesController@update");
+
