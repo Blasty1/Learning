@@ -21,11 +21,11 @@ Route::get('/', function () {
 Route::get('first_example/{slug}','PostController@get_post');
 Route::get('/about',"AssignController@test");
 
-Route::get('/about/{articles}',"ArticlesController@show");
-Route::get('/articles',"ArticlesController@index");
+Route::get('/about/{article}',"ArticlesController@show");
+Route::get('/articles',"ArticlesController@index")->name('articles.index');
 Route::post('articles',"ArticlesController@store");
 Route::get('/articles/create',"ArticlesController@create");
-Route::get('/articles/{articles}',"ArticlesController@show");
-Route::get('/articles/{articles}/edit',"ArticlesController@edit");
-Route::put('articles/{articles}',"ArticlesController@update");
+Route::get('/articles/{article}',"ArticlesController@show")->name('articles.show');
+Route::get('/articles/{update_article}/edit',"ArticlesController@edit");
+Route::put('/articles/{update_article}',"ArticlesController@update");
 
